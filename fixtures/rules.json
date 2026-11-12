@@ -1,0 +1,25 @@
+{
+  "draft_v1": {
+    "founded": [
+      "registered"
+    ],
+    "updated": [
+      "modified"
+    ]
+  },
+  "draft_v2": {
+    "founded": [
+      "registered",
+      "established"
+    ],
+    "updated": [
+      "modified",
+      "updated_at"
+    ]
+  },
+  "extracted": {
+    "registered": "2020-01-01",
+    "modified": "2026-11-11",
+    "unrecognised": "retain-me"
+  }
+}
