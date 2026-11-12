@@ -1,0 +1,26 @@
+{
+  "samples": [
+    {
+      "source": "a",
+      "http_charset": "utf-8",
+      "body_base64": "PG1ldGEgY2hhcnNldD0iZ2IxODAzMCI+PGFydGljbGUgZGF0YS1zZWN0aW9uPSJjdXJyZW50Ij48Yj7G89K1w/uzxjwvYj66z7PJuavLvjxiPrPJwaLI1cbaPC9iPjIwMjAtMDEtMDI8L2FydGljbGU+",
+      "chunks": [
+        60,
+        61,
+        113
+      ],
+      "chunk_semantics": "cumulative byte boundaries; final remainder follows"
+    },
+    {
+      "source": "b",
+      "http_charset": "utf-8",
+      "body_base64": "PGFydGljbGUgZGF0YS1zZWN0aW9uPSJjdXJyZW50Ij48Yj7ml6XmnJ88L2I+MDEvMDIvMjAyMDwvYXJ0aWNsZT48YXJ0aWNsZSBkYXRhLXNlY3Rpb249Imhpc3RvcnkiPjxiPuaXpeacnzwvYj4yMDE5LTEyLTMxPC9hcnRpY2xlPg==",
+      "chunks": [
+        36,
+        37,
+        129
+      ],
+      "chunk_semantics": "cumulative byte boundaries; final remainder follows"
+    }
+  ]
+}
