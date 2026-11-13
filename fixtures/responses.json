@@ -1,7 +1,10 @@
 {
+  "description": "Synthetic raw responses. body_base64 is the untouched byte stream; chunks are cumulative byte ends and intentionally split multi-byte characters. fixture_page points at the readable copy.",
   "samples": [
     {
       "source": "a",
+      "label": "a-garbled-meta",
+      "company_id": "7",
       "http_charset": "utf-8",
       "body_base64": "PG1ldGEgY2hhcnNldD0iZ2IxODAzMCI+PGFydGljbGUgZGF0YS1zZWN0aW9uPSJjdXJyZW50Ij48Yj7G89K1w/uzxjwvYj66z7PJuavLvjxiPrPJwaLI1cbaPC9iPjIwMjAtMDEtMDI8L2FydGljbGU+",
       "chunks": [
@@ -9,10 +12,13 @@
         61,
         113
       ],
-      "chunk_semantics": "cumulative byte boundaries; final remainder follows"
+      "chunk_semantics": "cumulative byte boundaries; final remainder follows",
+      "fixture_page": "fixtures/pages/samples/sample-a.html",
+      "notes": "HTTP header claims UTF-8; the page itself declares GB18030 in its meta tag."
     },
     {
       "source": "b",
+      "label": "b-two-blocks",
       "http_charset": "utf-8",
       "body_base64": "PGFydGljbGUgZGF0YS1zZWN0aW9uPSJjdXJyZW50Ij48Yj7ml6XmnJ88L2I+MDEvMDIvMjAyMDwvYXJ0aWNsZT48YXJ0aWNsZSBkYXRhLXNlY3Rpb249Imhpc3RvcnkiPjxiPuaXpeacnzwvYj4yMDE5LTEyLTMxPC9hcnRpY2xlPg==",
       "chunks": [
@@ -20,7 +26,61 @@
         37,
         129
       ],
-      "chunk_semantics": "cumulative byte boundaries; final remainder follows"
+      "chunk_semantics": "cumulative byte boundaries; final remainder follows",
+      "fixture_page": "fixtures/pages/samples/sample-b.html"
+    },
+    {
+      "source": "c",
+      "label": "c-same-number-other-source",
+      "company_id": "7",
+      "http_charset": "utf-8",
+      "body_base64": "PGFydGljbGUgZGF0YS1zZWN0aW9uPSJjdXJyZW50IiBkYXRhLWNvbXBhbnk9IjciPjxiPuS8geS4muWQjeensDwvYj7lkIjmiJDlhazlj7g8Yj7miJDnq4vml6XmnJ88L2I+MjAyMC0wMS0wMjxiPuabtOaWsOaXtumXtDwvYj4yMDI2LTExLTExPC9hcnRpY2xlPg==",
+      "chunks": [
+        53,
+        56,
+        148
+      ],
+      "chunk_semantics": "cumulative byte boundaries; final remainder follows",
+      "fixture_page": "fixtures/pages/samples/sample-c.html"
+    },
+    {
+      "source": "d",
+      "label": "d-conflicting-label",
+      "http_charset": "utf-8",
+      "body_base64": "PGFydGljbGUgZGF0YS1zZWN0aW9uPSJjdXJyZW50Ij48Yj7miJDnq4vml6XmnJ88L2I+MjAyMC0wMS0wMjxiPuaIkOeri+aXpeacnzwvYj4yMDIxLTAzLTA0PC9hcnRpY2xlPg==",
+      "chunks": [
+        36,
+        39,
+        100
+      ],
+      "chunk_semantics": "cumulative byte boundaries; final remainder follows",
+      "fixture_page": "fixtures/pages/samples/sample-d.html"
+    },
+    {
+      "source": "e",
+      "label": "e-ambiguous",
+      "company_id": "8",
+      "http_charset": "utf-8",
+      "body_base64": "PG1ldGEgY2hhcnNldD0iZ2IxODAzMCI+PGFydGljbGUgZGF0YS1zZWN0aW9uPSJjdXJyZW50Ij48Yj7kvIHkuJrlkI3np7A8L2I+6ZqU56a75LyB5LiaPGI+5oiQ56uL5pel5pyfPC9iPjIwMjItMDUtMDY8L2FydGljbGU+",
+      "chunks": [
+        60,
+        63,
+        126
+      ],
+      "chunk_semantics": "cumulative byte boundaries; final remainder follows",
+      "fixture_page": "fixtures/pages/samples/sample-e.html"
+    },
+    {
+      "source": "f",
+      "label": "f-invalid-byte",
+      "http_charset": "utf-8",
+      "body_base64": "PGFydGljbGUgZGF0YS1zZWN0aW9uPSJjdXJyZW50Ij48Yj7kvIHkuJrlkI3np7A8L2I+5Z2P/wA8L2FydGljbGU+",
+      "chunks": [
+        54,
+        66
+      ],
+      "chunk_semantics": "cumulative byte boundaries; final remainder follows",
+      "fixture_page": "fixtures/pages/samples/sample-f.html"
     }
   ]
 }

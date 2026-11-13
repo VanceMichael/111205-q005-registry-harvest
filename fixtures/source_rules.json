@@ -1,0 +1,91 @@
+{
+  "sources": {
+    "a": {
+      "notes": "GB18030 page served with a UTF-8 header; label aliases are Chinese and English.",
+      "company_field": "company_name",
+      "date": {"format": "%Y-%m-%d", "timezone": "Asia/Shanghai"},
+      "sections": [
+        {
+          "kind": "current",
+          "fields": [
+            {"canonical": "company_name", "aliases": ["企业名称", "企業名稱", "company_name"], "required": true},
+            {"canonical": "founded", "aliases": ["成立日期", "注册日期", "registered"], "parser": "date", "required": true},
+            {"canonical": "updated", "aliases": ["更新时间", "modified", "updated_at"], "parser": "date"}
+          ]
+        }
+      ]
+    },
+    "b": {
+      "notes": "One document with two blocks; the 日期 label means different things per block.",
+      "date": {"format": "%Y-%m-%d", "timezone": "Asia/Shanghai"},
+      "sections": [
+        {
+          "kind": "current",
+          "date": {"format": "%d/%m/%Y", "timezone": "Asia/Shanghai"},
+          "fields": [
+            {"canonical": "founded", "aliases": ["日期", "成立日期", "established"], "parser": "date", "required": true}
+          ]
+        },
+        {
+          "kind": "history",
+          "fields": [
+            {"canonical": "founded", "aliases": ["日期", "成立日期", "established"], "parser": "date"}
+          ]
+        }
+      ]
+    },
+    "c": {
+      "notes": "Second source reuses company number 7; ids are scoped per source.",
+      "company_field": "company_name",
+      "date": {"format": "%Y-%m-%d", "timezone": "Asia/Shanghai"},
+      "sections": [
+        {
+          "kind": "current",
+          "fields": [
+            {"canonical": "company_name", "aliases": ["企业名称"], "required": true},
+            {"canonical": "founded", "aliases": ["成立日期"], "parser": "date", "required": true},
+            {"canonical": "updated", "aliases": ["更新时间"], "parser": "date"}
+          ]
+        }
+      ]
+    },
+    "d": {
+      "notes": "Two identically labelled establishment dates in one block; needs human confirmation.",
+      "date": {"format": "%Y-%m-%d", "timezone": "Asia/Shanghai"},
+      "sections": [
+        {
+          "kind": "current",
+          "fields": [
+            {"canonical": "founded", "aliases": ["成立日期"], "parser": "date", "required": true}
+          ]
+        }
+      ]
+    },
+    "e": {
+      "notes": "UTF-8 bytes labelled GB18030; both codecs decode losslessly to different text.",
+      "company_field": "company_name",
+      "date": {"format": "%Y-%m-%d", "timezone": "Asia/Shanghai"},
+      "sections": [
+        {
+          "kind": "current",
+          "fields": [
+            {"canonical": "company_name", "aliases": ["企业名称"], "required": true},
+            {"canonical": "founded", "aliases": ["成立日期"], "parser": "date", "required": true}
+          ]
+        }
+      ]
+    },
+    "f": {
+      "notes": "Contains a byte no candidate codec can explain losslessly.",
+      "date": {"format": "%Y-%m-%d", "timezone": "Asia/Shanghai"},
+      "sections": [
+        {
+          "kind": "current",
+          "fields": [
+            {"canonical": "company_name", "aliases": ["企业名称"], "required": true}
+          ]
+        }
+      ]
+    }
+  }
+}
