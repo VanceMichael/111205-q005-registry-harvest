@@ -1,0 +1,90 @@
+{
+  "a": {
+    "encoding": null,
+    "block_mode": "labeled_text",
+    "section_attr": "data-section",
+    "label_tags": ["b"],
+    "default_section": "_unsectioned",
+    "company_id": "synthetic-a-001",
+    "timezone": "UTC+08:00",
+    "section_kinds": {
+      "current": "current_registration",
+      "history": "historical_registration"
+    },
+    "sections": {
+      "current": {
+        "fields": {
+          "company_name": {
+            "aliases": ["企业名称"],
+            "type": "text"
+          },
+          "founded": {
+            "aliases": ["成立日期"],
+            "type": "date",
+            "required": true
+          }
+        }
+      },
+      "history": {
+        "fields": {
+          "company_name": {
+            "aliases": ["企业名称"],
+            "type": "text"
+          },
+          "founded": {
+            "aliases": ["成立日期"],
+            "type": "date",
+            "required": false
+          }
+        }
+      }
+    },
+    "date_fields": {
+      "founded": {
+        "formats": ["%Y-%m-%d", "%d/%m/%Y"],
+        "timezone": "UTC+08:00",
+        "required": true
+      }
+    }
+  },
+  "b": {
+    "encoding": "utf-8",
+    "block_mode": "labeled_text",
+    "section_attr": "data-section",
+    "label_tags": ["b"],
+    "default_section": "_unsectioned",
+    "company_id": "synthetic-b-002",
+    "timezone": "UTC+08:00",
+    "section_kinds": {
+      "current": "current_registration",
+      "history": "historical_registration"
+    },
+    "sections": {
+      "current": {
+        "fields": {
+          "founded": {
+            "aliases": ["日期"],
+            "type": "date",
+            "required": true
+          }
+        }
+      },
+      "history": {
+        "fields": {
+          "founded": {
+            "aliases": ["日期"],
+            "type": "date",
+            "required": false
+          }
+        }
+      }
+    },
+    "date_fields": {
+      "founded": {
+        "formats": ["%d/%m/%Y", "%Y-%m-%d"],
+        "timezone": "UTC+08:00",
+        "required": true
+      }
+    }
+  }
+}
